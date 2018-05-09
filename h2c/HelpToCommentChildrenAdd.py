@@ -35,10 +35,9 @@ def getHeader(path):
 def iterateChildren(node):
     for child in node.children():
 
-        if len(child.comment()) == 0:
-            description = getHeader(child.type().defaultHelpUrl())
-            child.setComment(description)
-            child.setGenericFlag(hou.nodeFlag.DisplayComment, True)
+        description = getHeader(child.type().defaultHelpUrl())
+        child.setComment(description)
+        child.setGenericFlag(hou.nodeFlag.DisplayComment, True)
 
         if child.isLockedHDA():
             #hou.ui.displayMessage("LOCKED: "+child.name())
