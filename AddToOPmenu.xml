@@ -1,0 +1,40 @@
+<!-- Help to comment options. -->
+	<separatorItem/>
+	<subMenu id="opmenu.help_to_comment_menu">
+	    <label>Help To Comment</label>
+		<scriptItem id="opmenu.help_to_comment_add">
+			<label>Use help as comment...</label>
+			<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentAdd.py</scriptPath>
+		</scriptItem>
+		<scriptItem id="opmenu.help_to_comment_children_add">
+			<label>Use help as comment for children...</label>
+			<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentChildrenAdd.py</scriptPath>
+		</scriptItem>
+		<separatorItem/>
+		<scriptItem id="opmenu.help_to_comment_show">
+			<label>Display node comment...</label>
+			<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentShow.py</scriptPath>
+		</scriptItem>
+		<scriptItem id="opmenu.help_to_comment_hide">
+			<label>Hide node comment...</label>
+			<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentHide.py</scriptPath>
+		</scriptItem>
+		<scriptItem id="opmenu.help_to_comment_remove">
+			<label>Remove node comment...</label>
+			<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentRemove.py</scriptPath>
+		</scriptItem>
+		<separatorItem/>
+		<scriptItem id="opmenu.help_to_comment_children_show">
+			<label>Display children comments...</label>
+			<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentChildrenShow.py</scriptPath>
+		</scriptItem>
+		<scriptItem id="opmenu.help_to_comment_children_hide">
+			<label>Hide children comments...</label>
+			<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentChildrenHide.py</scriptPath>
+		</scriptItem>
+		<scriptItem id="opmenu.help_to_comment_children_remove">
+			<label>Remove children comments...</label>
+			<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentChildrenRemove.py</scriptPath>
+		</scriptItem>
+	</subMenu>
+	<separatorItem/>
