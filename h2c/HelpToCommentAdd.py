@@ -6,7 +6,7 @@
 # DESCRIPTION:
 # This script add node documentation headline as comment
 # INSTALLATION:
-# Place script inside $houdini/scripts folder
+# Place script inside $houdini/scripts/h2c folder
 
 import hou
 import os

@@ -6,7 +6,7 @@
 #DESCRIPTION:
 #This script removes comment from selected node
 #INSTALLATION:
-#Place script inside $houdini/scripts folder
+#Place script inside $houdini/scripts/h2c folder
 
 import hou
 

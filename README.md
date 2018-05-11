@@ -24,7 +24,7 @@ These scripts simplify this operations letting user automatically/manually popul
 6. create a node (eg: geometry)
 7. selecte node -> right mouse button -> Help to comment -> select proper menu voice
 
-## RIGHT MOUSE BUTTON MENU VOICES ON NODE: ##
+## RIGHT MOUSE BUTTON MENU VOICES ON NODE/S: ##
 1. <b>Use help as comment</b>: populate node/selected nodes comment with online documentation headline
 2. <b>Use help as comment for children</b>: populate node/selected nodes and its/theri children notes comment with online documentation headline
 3. <b>Display node comment</b>: make node/selected nodes comment visible
@@ -33,6 +33,11 @@ These scripts simplify this operations letting user automatically/manually popul
 6. <b>Display children comments</b>: make children nodes of node/selected nodes comment visible
 7. <b>Hide children comments</b>: hides children nodes of node/selected nodes comment
 8. <b>Remove children comments</b>: removes children nodes of node/selected nodes comment
+9. <b>"Layout" submenu</b>: these options modify space between nodes to let user avoid comments overlap (if you select a single node and it has children it will lay out its children, otherwise it will layout selected nodes):
+   1. <b>Lay out all increasing space</b>: lay out increasing space between nodes (+0.5)
+   2. <b>Lay out all decreasing space</b>: lay out increasing space between nodes (-0.5)
+   3. <b>Lay out all to x.y</b>: quick layout all to fixed space value
+
 
 ## NOTE: ## 
 1. Scripts works when selecting a single node and with multiple nodes

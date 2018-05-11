@@ -6,7 +6,7 @@
 # DESCRIPTION:
 # This script adds comment to all node children
 # INSTALLATION:
-# Place script inside $houdini/scripts folder
+# Place script inside $houdini/scripts/h2c folder
 
 import hou
 import os

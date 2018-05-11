@@ -6,7 +6,7 @@
 #DESCRIPTION:
 #This script hides comment of all node children
 #INSTALLATION:
-#Place script inside $houdini/scripts folder
+#Place script inside $houdini/scripts/h2c folder
 
 import hou
 
