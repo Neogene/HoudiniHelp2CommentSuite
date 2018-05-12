@@ -43,7 +43,7 @@ These scripts simplify this operations letting user automatically/manually popul
 1. Scripts works when selecting a single node and with multiple nodes
 2. Some nodes don't have headline or the whole documentation file.
 3. Script should work on every OS due to OS path separator code, if fails fix/report please.
-4. Scripts are separated to make them simpler to study and undertand, there 
+4. Scripts are separated to make them simpler to study and undertand. 
 
 ## CONTRIBUTING: ##
 Please feel free to fix/optimize the scripts. 
