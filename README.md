@@ -33,11 +33,15 @@ These scripts simplify this operations letting user automatically/manually popul
 6. <b>Display children comments</b>: make children nodes of node/selected nodes comment visible
 7. <b>Hide children comments</b>: hides children nodes of node/selected nodes comment
 8. <b>Remove children comments</b>: removes children nodes of node/selected nodes comment
-9. <b>"Layout" submenu</b>: these options modify space between nodes to let user avoid comments overlap (if you select a single node and it has children it will lay out its children, otherwise it will layout selected nodes):
-   1. <b>Lay out all increasing space</b>: lay out increasing space between nodes (+0.5)
-   2. <b>Lay out all decreasing space</b>: lay out increasing space between nodes (-0.5)
-   3. <b>Lay out all to x.y</b>: quick layout all to fixed space value
-
+9. <b>Translate comment</b>: translates comment using Google Translate service (it may take some seconds when using on multiple nodes)
+10. <b>"Layout" submenu</b>: these options modify space between nodes to let user avoid comments overlap (if you select a single node and it has children it will lay out its children, otherwise it will layout selected nodes):
+    1. <b>Lay out all increasing space</b>: lay out increasing space between nodes (+0.5)
+    2. <b>Lay out all decreasing space</b>: lay out increasing space between nodes (-0.5)
+    3. <b>Lay out all to x.y</b>: quick layout all to fixed space value
+11. <b>"Settings" submenu</b>: these options let change auto-tranlsate settings: 
+    1. <b>Auto translate new nodes comments</b>: translates online documentation headline comment when creating a new node, 
+        NOTE: this options delays node creation depending on your network connection while requesting comment tranlsation to Google.
+    2. <b>Set auto translate languate</b>: insert desidered language, eg: en (no translation), it, fr, es, ru etc
 
 ## NOTE: ## 
 1. Scripts works when selecting a single node and with multiple nodes

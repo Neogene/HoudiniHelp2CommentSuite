@@ -9,14 +9,18 @@
 # 4) create a geometry node
 # 5) inside it create any kind of node
 # 6) script will add for any new node as comment the headline taken from online documentation
-# NOTE: some scripts has not documentation 
+# NOTE: some scripts don't have documentation 
 
 import hou
 import os
 import zipfile
+import sys
 
 ZIPFOLDER = os.environ['HFS']+"/houdini/help/nodes.zip".replace("/",os.sep)
 ARCHIVE = zipfile.ZipFile(ZIPFOLDER, 'r')
+
+sys.path.append(os.environ['HFS']+"/houdini/scripts/h2c/".replace("/",os.sep))
+from HelpToCommentTranslateUtils import translateText
    
 def getHeader(path):
     #print "Path"+path
@@ -39,7 +43,7 @@ def main(kwargs):
 
     if len(node.comment())==0 :
         description = getHeader(node.type().defaultHelpUrl())
-        node.setComment(description)
+        node.setComment(translateText(description,True,False))
         node.setGenericFlag(hou.nodeFlag.DisplayComment,True)
     
 main(kwargs)

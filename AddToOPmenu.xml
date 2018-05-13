@@ -36,7 +36,13 @@
             <label>Remove children comments...</label>
             <scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentChildrenRemove.py</scriptPath>
         </scriptItem>
-		  <separatorItem/>
+		<separatorItem/>
+		<scriptItem id="opmenu.translate_language">
+				<label>Translate comment...</label>
+				<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentTranslateUtils.py</scriptPath>
+				<scriptArgs>0</scriptArgs>
+		</scriptItem>
+		 <separatorItem/>
 		 <subMenu id="opmenu.graphutils">
 			<label>Layout</label>
 			<scriptItem id="opmenu.graphutils_autolayout_increment">
@@ -69,6 +75,19 @@
 				<label>Lay Out all to 2.5...</label>
 				<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentGraphUtils.py</scriptPath>
 				<scriptArgs>2.5</scriptArgs>
+			</scriptItem>
+		</subMenu>
+		 <subMenu id="opmenu.translate_utils">
+			<label>Settings</label>
+			<scriptItem id="opmenu.translate_auto_translate_new_nodes">
+				<label>Auto translate new nodes comments...</label>
+				<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentTranslateUtils.py</scriptPath>
+				<scriptArgs>1</scriptArgs>
+			</scriptItem>
+			<scriptItem id="opmenu.translate_language_settings">
+				<label>Set auto translate language...</label>
+				<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentTranslateUtils.py</scriptPath>
+				<scriptArgs>2</scriptArgs>
 			</scriptItem>
 		</subMenu>
     </subMenu>
