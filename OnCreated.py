@@ -21,6 +21,7 @@ ARCHIVE = zipfile.ZipFile(ZIPFOLDER, 'r')
 
 sys.path.append(os.environ['HFS']+"/houdini/scripts/h2c/".replace("/",os.sep))
 from HelpToCommentTranslateUtils import translateText
+from HelpToCommentNodeInteractionUtils import auto_help_is_on,add_auto_help,auto_help_iterate_children,auto_help_show_Browser
    
 def getHeader(path):
     #print "Path"+path
@@ -40,6 +41,10 @@ def getHeader(path):
 def main(kwargs):
 
     node = kwargs["node"]
+
+    if auto_help_is_on():
+        add_auto_help(node)
+        auto_help_show_Browser(node)
 
     if len(node.comment())==0 :
         description = getHeader(node.type().defaultHelpUrl())

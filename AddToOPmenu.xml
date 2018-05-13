@@ -1,4 +1,4 @@
-   <!-- Help to comment options. -->
+ <!-- Help to comment options. -->
     <separatorItem/>
     <subMenu id="opmenu.help_to_comment_menu">
         <label>Help To Comment</label>
@@ -77,8 +77,13 @@
 				<scriptArgs>2.5</scriptArgs>
 			</scriptItem>
 		</subMenu>
-		 <subMenu id="opmenu.translate_utils">
+		 <subMenu id="opmenu.h2cutils">
 			<label>Settings</label>
+			<scriptItem id="opmenu.display_help_on_selection">
+				<label>Enable/Disable show help on node selection...</label>
+				<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentNodeInteractionUtils.py</scriptPath>
+				<scriptArgs>0</scriptArgs>
+			</scriptItem>
 			<scriptItem id="opmenu.translate_auto_translate_new_nodes">
 				<label>Auto translate new nodes comments...</label>
 				<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentTranslateUtils.py</scriptPath>

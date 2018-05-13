@@ -14,6 +14,7 @@ These scripts simplify this operations letting user automatically/manually popul
 
 ## RESULTS: ##
 ![Script result](https://github.com/Neogene/HoudiniHelp2CommentSuite/blob/master/result.png)
+![Script result](https://github.com/Neogene/HoudiniHelp2CommentSuite/blob/master/auto_help_display.gif)
 
 ## INSTALLATION: ##
 1. close Houdini
@@ -39,9 +40,10 @@ These scripts simplify this operations letting user automatically/manually popul
     2. <b>Lay out all decreasing space</b>: lay out increasing space between nodes (-0.5)
     3. <b>Lay out all to x.y</b>: quick layout all to fixed space value
 11. <b>"Settings" submenu</b>: these options let change auto-tranlsate settings: 
-    1. <b>Auto translate new nodes comments</b>: translates online documentation headline comment when creating a new node, 
+    1. <b>Enable/Disable show help on node selection</b>: load help page when selecting or creating a new node; if a browser tab is not found is added to main window.
+    2. <b>Auto translate new nodes comments</b>: translates online documentation headline comment when creating a new node. 
         NOTE: this options delays node creation depending on your network connection while requesting comment tranlsation to Google.
-    2. <b>Set auto translate languate</b>: insert desidered language, eg: en (no translation), it, fr, es, ru etc
+    3. <b>Set auto translate languate</b>: insert desidered language, eg: en (no translation), it, fr, es, ru etc
 
 ## NOTE: ## 
 1. Scripts works when selecting a single node and with multiple nodes
