@@ -14,6 +14,7 @@ These scripts simplify this operations letting user automatically/manually popul
 
 ## RESULTS: ##
 ![Script result](https://github.com/Neogene/HoudiniHelp2CommentSuite/blob/master/result.png)
+![Script result](https://github.com/Neogene/HoudiniHelp2CommentSuite/blob/master/translate.gif)
 ![Script result](https://github.com/Neogene/HoudiniHelp2CommentSuite/blob/master/auto_help_display.gif)
 
 ## INSTALLATION: ##
