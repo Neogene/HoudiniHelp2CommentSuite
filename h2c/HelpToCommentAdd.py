@@ -9,37 +9,34 @@
 # Place script inside $houdini/scripts/h2c folder
 
 import hou
-import os
 import zipfile
+import os
 
-ZIPFOLDER = os.environ['HFS']+"/houdini/help/nodes.zip".replace("/", os.sep)
+ZIPFOLDER = os.environ['HFS']+"/houdini/help/nodes.zip".replace("/",os.sep)
 ARCHIVE = zipfile.ZipFile(ZIPFOLDER, 'r')
-
 
 def getHeader(path):
     #print "Path"+path
     path = path.lower()
-    path = path.replace("operator:", "").replace(
-        "object/", "obj/").split("?")[0]
-
+    path = path.replace("operator:","").replace("object/","obj/").split("?")[0]
+   
     if "invalid" in path:
         return ""
-
+    
     try:
         nodeHelpContent = ARCHIVE.read(path+".txt")
         splitted = nodeHelpContent.split("\"\"\"")
-        return splitted[1] if len(splitted) > 1 else "Not found"
+        return splitted[1] if len(splitted)>1 else "Not found"
     except:
-        return "Not found"
-
+       return "Not found"
 
 def main(kwargs):
     #node = kwargs["node"]
 
     for node in hou.selectedNodes():
-        description = getHeader(node.type().defaultHelpUrl())
-        node.setComment(description)
-        node.setGenericFlag(hou.nodeFlag.DisplayComment, True)
-
-
+        if node.isEditable():
+            description = getHeader(node.type().defaultHelpUrl())
+            node.setComment(description)
+            node.setGenericFlag(hou.nodeFlag.DisplayComment,True)
+    
 main(kwargs)
