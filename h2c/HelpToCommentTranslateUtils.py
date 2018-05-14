@@ -63,8 +63,9 @@ def main():
         if choice == 0:
             #translate nodes
             for node in hou.selectedNodes():
-                node.setComment(translateText(getHeader(node.type().defaultHelpUrl())))
-                node.setGenericFlag(hou.nodeFlag.DisplayComment,True)
+                if node.isEditable():
+                    node.setComment(translateText(getHeader(node.type().defaultHelpUrl())))
+                    node.setGenericFlag(hou.nodeFlag.DisplayComment,True)
 
             if len(hou.selectedNodes())==0:
                 hou.ui.setStatusMessage("H2C: select at least a node.")
