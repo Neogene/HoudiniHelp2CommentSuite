@@ -6,7 +6,7 @@
 #DESCRIPTION:
 #This script removes comment from selected node
 #INSTALLATION:
-#Place script inside $houdini/scripts/h2c folder
+#Place script inside $houdini/scripts folder
 
 import hou
 
@@ -14,8 +14,12 @@ def main(kwargs):
     #node = kwargs["node"]
    
     for node in hou.selectedNodes():
-        node.setComment("")
-        node.setGenericFlag(hou.nodeFlag.DisplayComment,False)
-        hou.ui.setStatusMessage("H2C: Comment removed from selected node.")
+        if node.isEditable():
+            node.setComment("")
+            node.setGenericFlag(hou.nodeFlag.DisplayComment,False)
+            hou.ui.setStatusMessage("H2C: Comment removed from selected node.")
+        else:
+            hou.ui.setStatusMessage("H2C: Unable to remove comment from locked node.")
+  
 
 main(kwargs)

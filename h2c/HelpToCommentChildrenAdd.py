@@ -6,7 +6,7 @@
 # DESCRIPTION:
 # This script adds comment to all node children
 # INSTALLATION:
-# Place script inside $houdini/scripts/h2c folder
+# Place script inside $houdini/scripts folder
 
 import hou
 import os
@@ -35,9 +35,10 @@ def getHeader(path):
 def iterateChildren(node):
     for child in node.children():
 
-        description = getHeader(child.type().defaultHelpUrl())
-        child.setComment(description)
-        child.setGenericFlag(hou.nodeFlag.DisplayComment, True)
+        if len(child.comment()) == 0 and child.isEditable()::
+            description = getHeader(child.type().defaultHelpUrl())
+            child.setComment(description)
+            child.setGenericFlag(hou.nodeFlag.DisplayComment, True)
 
         if child.isLockedHDA():
             #hou.ui.displayMessage("LOCKED: "+child.name())

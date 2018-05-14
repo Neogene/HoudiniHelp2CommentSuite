@@ -6,14 +6,16 @@
 #DESCRIPTION:
 #This script removes comment from all node children
 #INSTALLATION:
-#Place script inside $houdini/scripts/h2c folder
+#Place script inside $houdini/scripts folder
 
 import hou
 
 def iterateChildren(node):
      for child in node.children():
  
-        child.setComment("")
+        if child.isEditable():
+            child.setComment("")
+        
         child.setGenericFlag(hou.nodeFlag.DisplayComment,False)
             
         if child.isLockedHDA(): 
