@@ -1,12 +1,12 @@
 #!/usr/bin/python
-# TILE: HOUDINI HELP TO COMMENT ADD
-# AUTHOR: eng. ANDREA LEGANZA
-# HOUDINI VERSION: TESTED ON HOUDINI 16.0 AND 16.5
-# SCRIPT VERSION: 1.0
-# DESCRIPTION:
-# This script add node documentation headline as comment
-# INSTALLATION:
-# Place script inside $houdini/scripts/h2c folder
+#TILE: HOUDINI HELP TO COMMENT ADD
+#AUTHOR: eng. ANDREA LEGANZA
+#HOUDINI VERSION: TESTED ON HOUDINI 16.0 AND 16.5
+#SCRIPT VERSION: 1.0
+#DESCRIPTION:
+#This script add node documentation headline as comment
+#INSTALLATION:
+#Place script inside $houdini/scripts/h2c folder
 
 import hou
 import zipfile
@@ -34,9 +34,11 @@ def main(kwargs):
     #node = kwargs["node"]
 
     for node in hou.selectedNodes():
-        if node.isEditable():
+        try:
             description = getHeader(node.type().defaultHelpUrl())
             node.setComment(description)
             node.setGenericFlag(hou.nodeFlag.DisplayComment,True)
+        except:
+            pass
     
 main(kwargs)

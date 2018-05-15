@@ -40,7 +40,7 @@ def translateText(text, checkAutoTranslate = False, promptForLanguageSelection =
          if hou.node("/").userData("h2c_auto_translate_language") == None or int(hou.node("/").userData("h2c_auto_translate_language")) == 0:
             language = "en"
 
-    print "Tranlate text: "+language
+    #print "Tranlate text: "+language
 
     return text if language == None or language == "en" else translate(text,language)
 
@@ -63,9 +63,11 @@ def main():
         if choice == 0:
             #translate nodes
             for node in hou.selectedNodes():
-                if node.isEditable():
+                try:
                     node.setComment(translateText(getHeader(node.type().defaultHelpUrl())))
                     node.setGenericFlag(hou.nodeFlag.DisplayComment,True)
+                except:
+                    pass
 
             if len(hou.selectedNodes())==0:
                 hou.ui.setStatusMessage("H2C: select at least a node.")

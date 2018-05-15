@@ -14,12 +14,12 @@ def main(kwargs):
     #node = kwargs["node"]
    
     for node in hou.selectedNodes():
-        if node.isEditable():
+        try:
             node.setComment("")
             node.setGenericFlag(hou.nodeFlag.DisplayComment,False)
             hou.ui.setStatusMessage("H2C: Comment removed from selected node.")
-        else:
-            hou.ui.setStatusMessage("H2C: Unable to remove comment from locked node.")
+        except:
+            hou.ui.setStatusMessage("H2C: Unable to remove comment from locked node: "+node.name())
   
 
 main(kwargs)

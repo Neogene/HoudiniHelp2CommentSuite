@@ -13,9 +13,11 @@ import hou
 def iterateChildren(node):
      for child in node.children():
  
-        if child.isEditable():
+        try:
             child.setComment("")
-        
+        except:
+            pass
+
         child.setGenericFlag(hou.nodeFlag.DisplayComment,False)
             
         if child.isLockedHDA(): 

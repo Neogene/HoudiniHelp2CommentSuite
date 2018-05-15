@@ -15,6 +15,7 @@ import hou
 import os
 import zipfile
 import sys
+import re
 
 ZIPFOLDER = os.environ['HFS']+"/houdini/help/nodes.zip".replace("/",os.sep)
 ARCHIVE = zipfile.ZipFile(ZIPFOLDER, 'r')
@@ -26,6 +27,9 @@ from HelpToCommentNodeInteractionUtils import auto_help_is_on,add_auto_help,auto
 def getHeader(path):
     #print "Path"+path
     path = path.lower()
+    
+    #print path
+      
     path = path.replace("operator:","").replace("object/","obj/").split("?")[0]
    
     if "invalid" in path:
@@ -33,10 +37,56 @@ def getHeader(path):
     
     try:
         nodeHelpContent = ARCHIVE.read(path+".txt")
-        splitted = nodeHelpContent.split("\"\"\"")
-        return splitted[1] if len(splitted)>1 else "Not found"
-    except:
+
+        if "\"\"\"" in nodeHelpContent:
+            splitted = nodeHelpContent.split("\"\"\"")
+            return splitted[1] if len(splitted)>1 else "Not found"
+        elif "See the" in nodeHelpContent:
+            if len(nodeHelpContent.split("See the"))>1:
+                #print "Found see the"
+          
+                #See the [DOP Network Node|Node:obj/dopnet].
+                m = re.search('(\w+)/(\w+)(?=])', nodeHelpContent, flags=re.I) #matches obj/dopnet
+               
+                if m:
+                    path = m.group(0)
+
+                    path = path.replace("operator:","").replace("object/","obj/").split("?")[0]
+
+                    try:
+                        nodeHelpContent = ARCHIVE.read(path+".txt")
+
+                        if "\"\"\"" in nodeHelpContent:
+                            splitted = nodeHelpContent.split("\"\"\"")
+                            return splitted[1] if len(splitted)>1 else "Not found"
+
+                    except Exception, error:
+                       # print "EXCEPTION: "+str(error)
+                        return "Not found"
+                else:
+                    #print "regex not found"
+                    return "Not found"
+            else:
+                #print "See the not found..."
+                return "Not found" 
+            
+    except Exception, error:
+        #print "EXCEPTION: "+str(error)
         return "Not found"
+
+def iterateChildren(node):
+    for child in node.children():
+
+        if len(child.comment()) == 0 and child.isEditable():
+            description = getHeader(child.type().defaultHelpUrl())
+            child.setComment(description)
+            child.setGenericFlag(hou.nodeFlag.DisplayComment, True)
+
+        if child.isLockedHDA() or not child.isEditable():
+            #hou.ui.displayMessage("LOCKED: "+child.name())
+            return
+        elif child.children() > 0:
+            iterateChildren(child)
 
 def main(kwargs):
 
@@ -50,5 +100,8 @@ def main(kwargs):
         description = getHeader(node.type().defaultHelpUrl())
         node.setComment(translateText(description,True,False))
         node.setGenericFlag(hou.nodeFlag.DisplayComment,True)
+
+    iterateChildren(node)
+
     
 main(kwargs)
