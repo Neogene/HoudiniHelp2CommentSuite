@@ -44,8 +44,8 @@ These scripts simplify this operations letting user automatically/manually popul
     1. <b>Enable/Disable show help on node selection</b>: load help page when selecting or creating a new node; if a browser tab is not found is added to main window.
     2. <b>Auto translate new nodes comments</b>: translates online documentation headline comment when creating a new node. 
         NOTE: this options delays node creation depending on your network connection while requesting comment tranlsation to Google.
-    3. <b>Set auto translate languate</b>: insert desidered language, eg: en (no translation), it, fr, es, ru etc
-
+    3. <b>Set auto translate language</b>: insert desidered language, eg: en (no translation), it, fr, es, ru etc
+    4. <b>Disable Geometry file node generation</b>: Enable/Disable automatic Geometry file node creation inside Geometry node 
 ## NOTE: ## 
 1. Scripts works when selecting a single node and with multiple nodes
 2. Some nodes don't have headline or the whole documentation file.

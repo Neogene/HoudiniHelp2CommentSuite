@@ -94,6 +94,11 @@
 				<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentTranslateUtils.py</scriptPath>
 				<scriptArgs>2</scriptArgs>
 			</scriptItem>
+	<scriptItem id="opmenu.geometry_file_generation_settings">
+				<label>Enable/Disable Geometry file node generation...</label>
+				<scriptPath>$HFS/houdini/scripts/h2c/HelpToCommentNodeUtils.py</scriptPath>
+				<scriptArgs>0</scriptArgs>
+			</scriptItem>
 		</subMenu>
     </subMenu>
     <separatorItem/>
