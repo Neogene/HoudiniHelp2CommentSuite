@@ -26,6 +26,13 @@ These scripts simplify this operations letting user automatically/manually popul
 6. create a node (eg: geometry)
 7. selecte node -> right mouse button -> Help to comment -> select proper menu voice
 
+## WARNING: ##
+If your path contains SPACES some scripts don't work, i filled a bug on 05/19/2018, this issue is cross-platform, a temp fix IF YOUR HOME PATH HAS NOT SPACES (otherwise use a folder without spaces in its path) to:
+1. replace on OPmenu.xml all occurrences $HFS/houdini/scripts/h2c/ with $HOME/scripts/h2c or ($HOME/h2c)
+2. create the folder in your home folder
+3. install scripts in that folder.
+3. close and reopen Houdini.
+
 ## RIGHT MOUSE BUTTON MENU VOICES ON NODE/S: ##
 1. <b>Use help as comment</b>: populate node/selected nodes comment with online documentation headline
 2. <b>Use help as comment for children</b>: populate node/selected nodes and its/theri children notes comment with online documentation headline
