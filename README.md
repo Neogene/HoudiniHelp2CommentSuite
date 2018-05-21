@@ -21,7 +21,7 @@ These scripts simplify this operations letting user automatically/manually popul
 1. close Houdini
 2. copy h2c folder inside  <$houdini>/scripts/ 
 3. Add the content of file AddToOPmenu.xml into <$houdini>/OPMenu.xml, this is required to display menu on RMB. I placed after "Edit Comment" voice, but is up to you.
-4. optional: copy OnUpdated.py inside <$houdini>/scripts/ : this script automatically adds help as comment for every new node
+4. optional: copy OnCreated.py inside <$houdini>/scripts/ : this script automatically adds help as comment for every new node
 5. start Houdini
 6. create a node (eg: geometry)
 7. selecte node -> right mouse button -> Help to comment -> select proper menu voice
